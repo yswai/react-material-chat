@@ -5,7 +5,6 @@ class Message extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log(props);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     }
 
