@@ -20,7 +20,9 @@ class ChannelList extends React.Component {
             )
         });
         return (
-            <Card>
+            <Card style={{
+                flexGrow: 1,
+            }}>
                 <CardHeader title="ChannelList" />
                 <List>{items}</List>
             </Card>

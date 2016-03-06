@@ -19,7 +19,10 @@ class MessageList extends React.Component {
             );
         });
         return (
-            <Card>
+            <Card style={{
+                flexGrow: 2,
+                marginLeft: '0.5rem'
+            }}>
                 <CardHeader title="Message List" />
                 <List>{messageList}</List>
             </Card>

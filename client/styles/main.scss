@@ -1,5 +1,14 @@
-$color: red;
 
 body {
   margin: 0;
+
+  .chat-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 1rem auto;
+  }
+
 }
