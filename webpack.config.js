@@ -1,19 +1,39 @@
 var webpack = require('webpack');
-var CWD = __dirname;
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CLIENT_DIR =  __dirname + '/client';
 
-var config = {
+var webpackConfig = {
+    context: CLIENT_DIR,
     entry: {
-        "main": `${CWD}/client/app.js`
+        "main": [
+            CLIENT_DIR + '/app.jsx'
+        ]
     },
     output: {
-        filename: `${CWD}/client/bundle.[hash].js`
+        path: CLIENT_DIR,
+        filename: `bundle.[name].[hash].js`
     },
     plugins: [
-
+        new HtmlWebpackPlugin({
+            filename: `index.html`,
+            template: `index.ejs`
+        })
     ],
-    loaders: [
-
-    ]
+    resolve: {
+        extensions: ['', '.js', '.jsx']
+    },
+    module: {
+        loaders: [
+            {
+                test: /\.jsx?$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+                query: {
+                    presets: ['es2015', 'react']
+                }
+            }
+        ]
+    }
 };
 
-module.exports = config;
+module.exports = webpackConfig;

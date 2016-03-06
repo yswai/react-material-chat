@@ -1,8 +1,14 @@
+<!doctype html>
 <html>
 <head>
-
+    <meta charset="UTF-8">
+    <title>Hello React</title>
 </head>
 <body>
-    Hello
+<div id="app">
+<pre><%= JSON.stringify(htmlWebpackPlugin, null, '\t') %></pre>
+<% htmlWebpackPlugin.files.js.forEach(function(bundle) { %>
+    <script src="<%= bundle %>"></script>
+<% }); %>
 </body>
 </html>
