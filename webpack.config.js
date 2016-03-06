@@ -6,7 +6,7 @@ var webpackConfig = {
     context: CLIENT_DIR,
     entry: {
         "main": [
-            CLIENT_DIR + '/app.jsx'
+            CLIENT_DIR + '/App.jsx'
         ]
     },
     output: {
