@@ -1,6 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import MessageList from './components/MessageList.jsx';
+import ChannelList from './components/ChannelList.jsx';
 import mui from 'material-ui';
 import MyTheme from './components/MyTheme.jsx';
 import ThemeManager from 'material-ui/lib/styles/theme-manager';
@@ -17,10 +18,13 @@ class App extends React.Component {
             messages: [
                 'hi how are you',
                 'hey i am fine'
+            ],
+            channels: [
+                'Channel A',
+                'Channel B'
             ]
         }
     }
-
     getChildContext() {
         return {
             muiTheme: ThemeManager.getMuiTheme(MyTheme)
@@ -28,10 +32,12 @@ class App extends React.Component {
     }
 
     render() {
-        var messages = this.state.messages;
+        let messages = this.state.messages;
+        let channels = this.state.channels;
         return (
             <div id="main">
                 <AppBar title="Awesome Chat App" />
+                <ChannelList channels={channels} />
                 <MessageList messages={messages} />
             </div>
         );

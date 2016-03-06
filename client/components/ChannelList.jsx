@@ -1,11 +1,12 @@
 import React from 'react';
-import Message from './Message.jsx';
+import ListItem from 'material-ui/lib/lists/list-item';
 import Card from 'material-ui/lib/card/card';
 import CardHeader from 'material-ui/lib/card/card-header';
 import List from 'material-ui/lib/lists/list';
+import Avatar from 'material-ui/lib/avatar';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
-class MessageList extends React.Component {
+class ChannelList extends React.Component {
 
     constructor(props) {
         super(props);
@@ -13,19 +14,19 @@ class MessageList extends React.Component {
     }
 
     render() {
-        let messageList = this.props.messages.map( (m, idx) => {
+        let items = this.props.channels.map( (c, idx) => {
             return (
-                <Message idx={idx} message={m} />
-            );
+                <ListItem key={idx} primaryText={c} />
+            )
         });
         return (
             <Card>
-                <CardHeader title="Message List" />
-                <List>{messageList}</List>
+                <CardHeader title="ChannelList" />
+                <List>{items}</List>
             </Card>
         )
     }
 
 }
 
-export default MessageList;
+export default ChannelList;
