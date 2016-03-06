@@ -1,6 +1,7 @@
 import React from 'react';
 import {render} from 'react-dom';
 import Chat from './components/Chat.jsx';
+require('./styles/main.scss');
 
 class App extends React.Component {
 

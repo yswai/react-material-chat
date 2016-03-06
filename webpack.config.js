@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CLIENT_DIR =  __dirname + '/client';
 
@@ -31,6 +32,11 @@ var webpackConfig = {
                 query: {
                     presets: ['es2015', 'react']
                 }
+            },
+            {
+                test: /\.scss?$/,
+                loader: 'style!css!sass',
+                include: path.join(CLIENT_DIR, 'styles')
             }
         ]
     }
