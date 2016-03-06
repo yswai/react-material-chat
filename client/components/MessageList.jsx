@@ -1,16 +1,18 @@
 import React from 'react';
+import Message from './Message.jsx';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
-class Chat extends React.Component {
+class MessageList extends React.Component {
 
     constructor(props) {
         super(props);
+        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     }
 
     render() {
         let messageList = this.props.messages.map( (m, idx) => {
             return (
-                <li key={idx}>{m}</li>
+                <Message idx={idx} message={m} />
             );
         });
         return (
@@ -22,4 +24,4 @@ class Chat extends React.Component {
 
 }
 
-export default Chat;
+export default MessageList;

@@ -1,6 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
-import Chat from './components/Chat.jsx';
+import MessageList from './components/MessageList.jsx';
 require('./styles/main.scss');
 
 class App extends React.Component {
@@ -20,7 +20,7 @@ class App extends React.Component {
         return (
             <div id="main">
                 <p>Hello React!</p>
-                <Chat messages={messages} />
+                <MessageList messages={messages} />
             </div>
         );
     }
